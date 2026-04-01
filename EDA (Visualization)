@@ -1,0 +1,13 @@
+# Distribution
+sns.histplot(df["price"], kde=True)
+plt.title("Price Distribution")
+plt.show()
+
+# Relationship
+sns.scatterplot(x="area", y="price", data=df)
+plt.show()
+
+# Correlation
+plt.figure(figsize=(10,8))
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm")
+plt.show()
