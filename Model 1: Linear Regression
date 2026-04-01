@@ -1,0 +1,8 @@
+lr = LinearRegression()
+lr.fit(X_train, y_train)
+
+pred_lr = lr.predict(X_test)
+
+print("Linear Regression:")
+print("RMSE:", mean_squared_error(y_test, pred_lr, squared=False))
+print("R2:", r2_score(y_test, pred_lr))
