@@ -1,0 +1,2 @@
+corr = df.corr()["price"].sort_values(ascending=False)
+print(corr)
