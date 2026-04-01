@@ -1,0 +1,5 @@
+# Handle missing values
+df = df.dropna()
+
+# Convert categorical to numeric
+df = pd.get_dummies(df, drop_first=True)
