@@ -1,0 +1,15 @@
+dt = DecisionTreeRegressor()
+
+params = {"max_depth": [3, 5, 10, None]}
+
+grid = GridSearchCV(dt, params, cv=5)
+grid.fit(X_train, y_train)
+
+best_dt = grid.best_estimator_
+
+pred_dt = best_dt.predict(X_test)
+
+print("\nDecision Tree:")
+print("Best Params:", grid.best_params_)
+print("RMSE:", mean_squared_error(y_test, pred_dt, squared=False))
+print("R2:", r2_score(y_test, pred_dt))
